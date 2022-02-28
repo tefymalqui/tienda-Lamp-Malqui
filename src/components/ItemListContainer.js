@@ -1,13 +1,13 @@
 import React from 'react';
 
-const ItemListContainer = () => {
+const ItemListContainer = (props) => {
    return (
        <div>
            <h2>
-               Cuerpo de pagina e-commerce
+              Bienvenidos a {props.inicio}
            </h2>
        </div>
    )
 } 
 
-export default ItemListContainer
+export default ItemListContainer;
