@@ -14,7 +14,7 @@ import logo from '../img/logo.png' //dos puntos porque vas una carpeta hacia atr
     <div className="collapse navbar-collapse justify-content-center" id="navbarNav">
       <ul className="navbar-nav">
         <li className="nav-item">
-          <a className="nav-link active text-light" aria-current="page" href="#">Home</a>
+          <a className="nav-link active text-light" aria-current="page" href="#">Inicio</a>
         </li>
         <li className="nav-item">
           <a className="nav-link text-light" href="#">Productos</a>
