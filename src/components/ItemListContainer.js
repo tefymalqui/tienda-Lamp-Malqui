@@ -1,5 +1,5 @@
 import React from 'react';
-import Contador from './ItemCount';
+import ItemList from './ItemList';
 
 const ItemListContainer = (props) => {
    return (
@@ -7,7 +7,7 @@ const ItemListContainer = (props) => {
            <h2>
               Bienvenidos a {props.inicio}
            </h2>
-           <Contador stock="5" initial={1}/>
+           <ItemList />
        </div>
    )
 } 

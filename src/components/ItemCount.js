@@ -15,7 +15,6 @@ const Contador = ({stock, initial}) => {
     }
     return (
         <div>
-            <p>Mesa ratona</p>
             <button onClick={disminuir} className="btn btn-outline-dark">-</button>
             <span className="m-2">{count}</span>
             <button onClick={aumentar} className="btn btn-outline-dark">+</button>
