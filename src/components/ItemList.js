@@ -4,11 +4,11 @@ import Item from './Item';
 const ItemList = () => {
     const [listProducts, setListProducts] = useState([])
     const productos = [
-        { id: '1', name: 'lampara', img: '../img/lampara.jpg', },
-        { id: '2', name: 'silla', img: '', },
-        { id: '3', name: 'jarron', img: '', },
-        { id: '4', name: '', img: '', },
-        { id: '5', name: '', img: '', },
+        { id: '1', name: 'Lampara', img: './imagen/lampara.jpg', },
+        { id: '2', name: 'Silla', img: './imagen/silla.jpg', },
+        { id: '3', name: 'Jarron', img: './imagen/jarron.jpg', },
+        { id: '4', name: '', img: './imagen/lampara.jpg', },
+        { id: '5', name: '', img: './imagen/lampara.jpg', },
     ]
 
     const getProducts = new Promise ((resolve, reject) =>{
@@ -33,7 +33,9 @@ const ItemList = () => {
     return (
         <div>
             <h2>Lista de productos</h2>
-            {listProducts.map((productos) => <Item productos={productos} key={productos.id}/>)}
+           <div className='d-flex justify-content-between flex-wrap'>
+                {listProducts.map((productos) => <Item productos={productos} key={productos.id}/>)}
+           </div>
         </div>
     )
 }

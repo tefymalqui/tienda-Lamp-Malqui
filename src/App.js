@@ -13,6 +13,9 @@ function App() {
       <main>
         <ItemListContainer inicio="Lamp"/>
       </main>
+      <footer>
+        
+      </footer>
     </div>
   );
 }
