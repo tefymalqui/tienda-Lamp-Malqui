@@ -2,17 +2,18 @@ import React, { useEffect, useState } from "react";
 import ItemDetail from 'ItemDetail.js'
 
 const ItemDetailContainer = () => {
-    const [] = useState({})
+    const [DetailContainer, setDetailContainer] = useState([])
 
     useEffect(() => {
+       fetch("assets/productos.json")
+       .then(response => response.json())
+       .then(datos =>{
+           setDetailContainer(datos)
+       })
+    }, [])
 
-    })
-
-    return (
-        <div>
-          <ItemDetail/>
-        </div>
+    return DetailContainer(
     )
 }
 
-export default ItemDetailContainer
+export default ItemDetailContainer 
