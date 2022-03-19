@@ -1,17 +1,21 @@
 import React, { Component } from 'react';
+/*falta agregar descripcion */
 
-const ItemDetail = (productos) => {
+const ItemDetail = ({detail}) => {
+     console.log(detail)
 
     return (
-        <div>
-            <div className='card m-2' style={{ width: '16rem' }}>
-                <img src={productos.img} />
+      <div>
+          <h4>Detalle de producto</h4>
+           <div className='card m-2' style={{ width: '16rem' }}>
+                <img src={detail.img} />
                 <div className='card-body'>
-                    <p>{productos.name}</p>
-                    <h5>Precio: $<span>{productos.precio}</span></h5>
+                    <p>{detail.name}</p>
+                    <h5>Precio: $<span>{detail.precio}</span></h5>
+                    <p>Descripcion: {detail.description}</p>
                 </div>
-            </div>
-        </div>
+            </div> 
+        </div> 
     )
 }
 

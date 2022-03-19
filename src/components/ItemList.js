@@ -3,13 +3,14 @@ import Item from './Item';
 
 const ItemList = () => {
     const [listProducts, setListProducts] = useState([])
+    const [loading, setLoading] = useState(true)
     const productos = [
-        { id: '1', name: 'Lampara', img: './imagen/lampara.jpg', },
+      /*  { id: '1', name: 'Lampara', img: './imagen/lampara.jpg', },
         { id: '2', name: 'Silla', img: './imagen/silla.jpg', },
         { id: '3', name: 'Jarron', img: './imagen/jarron.jpg', },
         { id: '4', name: '', img: './imagen/lampara.jpg', },
         { id: '5', name: '', img: './imagen/lampara.jpg', },
-    ]
+    */]
 
     const getProducts = new Promise ((resolve, reject) =>{
         let condition = true
@@ -23,18 +24,20 @@ const ItemList = () => {
     })
       
      useEffect(() =>{
-         getProducts
-         .then((respuesta) => setListProducts(respuesta) )
+         fetch('https://623607d3eb166c26eb2e7041.mockapi.io/productos')
+         .then((response) => response.json())
+         .then((data) => setListProducts(data))
          .catch((error) => console.log(error))
+         .finally(() => setLoading(false))
     },[])
     
     console.log(listProducts)
 
     return (
         <div>
-            <h2>Lista de productos</h2>
+            <h3>Productos</h3>
            <div className='d-flex justify-content-between flex-wrap'>
-                {listProducts.map((productos) => <Item productos={productos} key={productos.id}/>)}
+                { loading ? <p>Cargando..</p> : listProducts.map((productos) => <Item productos={productos} key={productos.id}/>)}
            </div>
         </div>
     )
