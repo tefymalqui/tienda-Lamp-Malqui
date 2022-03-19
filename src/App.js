@@ -11,10 +11,10 @@ function App() {
       <header>
         <NavBar />
       </header>
-      <main>
+      <section className='container'>
         <ItemListContainer inicio="Lamp"/>
         <ItemDetailContainer/>
-      </main>
+      </section>
       <footer>
         
       </footer>
