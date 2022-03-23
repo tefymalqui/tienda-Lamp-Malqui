@@ -35,12 +35,10 @@ const ItemList = () => {
              }else {
                 setListProducts(data.filter((productos) => productos.categoria === categoryId))
              }
-         }) /*setListProducts(data))*/
+         }) 
          .catch((error) => console.log(error))
          .finally(() => setLoading(false))
-    },[])
-    
-    console.log(listProducts)
+    },[categoryId])
  
     return (
         <div>

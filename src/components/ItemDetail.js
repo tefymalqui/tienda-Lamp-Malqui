@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-/*falta agregar descripcion */
+import Contador from './ItemCount';
+//falta agregar descripcion 
 
 const ItemDetail = ({detail}) => {
      console.log(detail)
@@ -13,6 +14,9 @@ const ItemDetail = ({detail}) => {
                     <p>{detail.name}</p>
                     <h5>Precio: $<span>{detail.precio}</span></h5>
                     <p>Descripcion: {detail.description}</p>
+                    <Contador stock="5" initial={1} />
+                    <button className="btn btn-outline-dark m-2">Agregar al carrito</button>
+                    <button>Volver a Inicio</button>
                 </div>
             </div> 
         </div> 

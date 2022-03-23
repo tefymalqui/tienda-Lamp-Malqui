@@ -20,9 +20,6 @@ const Contador = ({ stock, initial }) => {
                 <span className="m-2">{count}</span>
                 <button onClick={aumentar} className="btn btn-outline-dark">+</button>
             </div>
-            <div>
-                <button className="btn btn-outline-dark m-2">Agregar al carrito</button>
-            </div>
         </div>
     )
 }

@@ -9,32 +9,20 @@ import {
   Routes,
   Route,
 } from "react-router-dom";
+import Inicio from './components/Inicio';
+import Cart from './components/Cart';
 
 function App() {
   return (
     <BrowserRouter>
-      <div className="App">
-        <header>
-          <NavBar />
-        </header>
-        <Routes>
-          <Route path='/' element={
-            <section className='container'>
-              <ItemListContainer inicio="Lamp" />
-              <ItemDetailContainer />
-            </section>
-          } />
-           <Route path='/Productos/:categoryId' element={
-            <section className='container'>
-              <ItemListContainer inicio="Lamp" />
-              <ItemDetailContainer />
-            </section>
-          } />
-        </Routes>
-        <footer>
-
-        </footer>
-      </div>
+      <NavBar />
+      <Routes>
+        <Route path='/' element={<Inicio />} />
+        <Route path='/productos' element={<ItemListContainer inicio="Lamp" /> } />
+        <Route path='/Productos/:categoryId' element={<ItemListContainer inicio="Lamp" /> } />
+        <Route path='detalle/:id' element={<ItemDetailContainer/>}/>
+        <Route path='/cart' element={<Cart/>}/>
+      </Routes>
     </BrowserRouter>
   );
 }

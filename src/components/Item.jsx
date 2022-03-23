@@ -1,21 +1,21 @@
 import React from 'react';
-import Contador from './ItemCount';
+import { useNavigate } from 'react-router-dom';
 
 const Item = ({ productos }) => {
+    const navigate = useNavigate () ;
     const onAdd = () => {
        console.log('')
     }
     return (
         <div className='card m-1' style={{ width: '14rem' }}>
-            <img src={productos.img} />
+            <div style={{backgroundImage:`url('${productos.img}')`}} className='cardImg'/>
             <div className='card-body'>
                 <p>{productos.name}</p>
                 <p>${productos.precio}</p>
-                <Contador stock="5" initial={1} />
+                <button onClick={()=>navigate(`/detalle/${productos.id}`)} className="btn btn-outline-dark m-1">Detalle</button>
             </div>
         </div>
     )
 }
-
 
 export default Item
