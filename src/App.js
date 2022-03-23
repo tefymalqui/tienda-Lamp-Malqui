@@ -4,21 +4,38 @@ import "bootstrap/dist/js/bootstrap.bundle.min.js";
 import NavBar from './components/Navbar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import {
+  BrowserRouter,
+  Routes,
+  Route,
+} from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header>
-        <NavBar />
-      </header>
-      <section className='container'>
-        <ItemListContainer inicio="Lamp"/>
-        <ItemDetailContainer/>
-      </section>
-      <footer>
-        
-      </footer>
-    </div>
+    <BrowserRouter>
+      <div className="App">
+        <header>
+          <NavBar />
+        </header>
+        <Routes>
+          <Route path='/' element={
+            <section className='container'>
+              <ItemListContainer inicio="Lamp" />
+              <ItemDetailContainer />
+            </section>
+          } />
+           <Route path='/Productos/:categoryId' element={
+            <section className='container'>
+              <ItemListContainer inicio="Lamp" />
+              <ItemDetailContainer />
+            </section>
+          } />
+        </Routes>
+        <footer>
+
+        </footer>
+      </div>
+    </BrowserRouter>
   );
 }
 

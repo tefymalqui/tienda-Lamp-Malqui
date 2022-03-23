@@ -12,7 +12,7 @@ const ItemDetailContainer = () => {
              setDetail( response.find((productos) => productos.id === '1'))
         })
     }, [])
-
+    
     /*console.log("estoy", detail)*/
 
     return (

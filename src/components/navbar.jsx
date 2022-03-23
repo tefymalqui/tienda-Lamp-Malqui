@@ -1,6 +1,7 @@
 import React from 'react'
 import logo from '../img/logo.png' //dos puntos porque vas una carpeta hacia atras
 import { CartWidget } from './CartWidget'
+import {Link} from 'react-router-dom'
 
 const Navbar = () => {
   return (
@@ -15,13 +16,13 @@ const Navbar = () => {
         <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
-              <a className="nav-link active text-light " aria-current="page" href="#">Inicio</a>
+              <Link className="nav-link active text-light " aria-current="page" to='/'>Inicio</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light" href="#">Productos</a>
+              <Link className="nav-link text-light" to="/Productos">Productos</Link>
             </li>
             <li className="nav-item">
-              <a className="nav-link text-light" href="#">Contacto</a>
+              <Link className="nav-link text-light" to="/Contacto">Contacto</Link>
             </li>
           </ul>
           
