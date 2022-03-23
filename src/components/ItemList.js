@@ -6,7 +6,7 @@ const ItemList = () => {
     const [listProducts, setListProducts] = useState([])
     const [loading, setLoading] = useState(true)
     const {categoryId} = useParams()
-    console.log(categoryId) 
+   /* console.log(categoryId) */
     const productos = [
       /*  { id: '1', name: 'Lampara', img: './imagen/lampara.jpg', },
         { id: '2', name: 'Silla', img: './imagen/silla.jpg', },
@@ -25,7 +25,7 @@ const ItemList = () => {
             reject('Error')
         }
     })
-      
+     //revisar category 
      useEffect(() =>{
          fetch('https://623607d3eb166c26eb2e7041.mockapi.io/productos')
          .then((response) =>  response.json())
