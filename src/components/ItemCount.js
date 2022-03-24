@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
-const Contador = ({ stock, initial, onAdd }) => {
+const Contador = ({ stock, initial, onAdd, count, setCount }) => {
 
-    const [count, setCount] = useState(initial)
+    //const [count, setCount] = useState(initial)
     const aumentar = () => {
         if (count < stock)
             setCount(count + 1)

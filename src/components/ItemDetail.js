@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 //falta agregar descripcion 
 
 const ItemDetail = ({ name,precio, description, stock, img }) => {
-        //console.log(detail)
+
+    const [count, setCount] = useState(1)
     const onAdd = () => {
         const itemToCart = {
             name,
@@ -28,7 +29,8 @@ const ItemDetail = ({ name,precio, description, stock, img }) => {
                    initial={1} 
                    onAdd={onAdd}
                    name= {name}
-                   
+                   count= {count}
+                   setCount={setCount}
                    />
                    <Link to='/cart'>Finalizar Compra</Link>
                 </div>
