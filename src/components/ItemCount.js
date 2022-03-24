@@ -24,7 +24,9 @@ const Contador = ({ stock, initial, onAdd }) => {
                 <Link to='/cart'>
                 <button onClick={onAdd} className="btn btn-outline-dark my-2">Agregar al carrito</button>
                 </Link>
+                <Link to='/'>
                 <button className="btn btn-outline-dark my-2">Volver a Inicio</button>
+                </Link>
             </div>
         </div>
     )
