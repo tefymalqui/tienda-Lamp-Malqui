@@ -1,25 +1,41 @@
-import React, { Component } from 'react';
+import React, { Component, useState} from 'react';
 import Contador from './ItemCount';
+import { Link } from 'react-router-dom';
 //falta agregar descripcion 
 
-const ItemDetail = ({detail}) => {
-     console.log(detail)
-
+const ItemDetail = ({ name,precio, description, stock, img }) => {
+        //console.log(detail)
+    const [count, setCount] = useState()
+    const onAdd = () => {
+        const itemToCart = {
+            name,
+            precio,
+            description,
+            stock,
+        }
+        console.log (itemToCart)
+    }
     return (
-      <div>
-          <h4>Detalle de producto</h4>
-           <div className='card m-2' style={{ width: '16rem' }}>
-                <img src={detail.img} />
+        <div>
+            <h4>Detalle de producto</h4>
+            <div className='card m-2' style={{ width: '16rem' }}>
+                <img src={img} />
                 <div className='card-body'>
-                    <p>{detail.name}</p>
-                    <h5>Precio: $<span>{detail.precio}</span></h5>
-                    <p>Descripcion: {detail.description}</p>
-                    <Contador stock="5" initial={1} />
-                    <button className="btn btn-outline-dark m-2">Agregar al carrito</button>
-                    <button>Volver a Inicio</button>
+                    <p>{name}</p>
+                    <h5>Precio: $<span>{precio}</span></h5>
+                    <p>Descripcion: {description}</p>
+                   <Contador 
+                   stock={stock} 
+                   initial={1} 
+                   onAdd={onAdd}
+                   name= {name}
+                   count= {count}
+                   setCount={setCount}
+                   />
+                   <Link to='/cart'>Finalizar Compra</Link>
                 </div>
-            </div> 
-        </div> 
+            </div>
+        </div>
     )
 }
 
