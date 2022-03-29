@@ -11,19 +11,22 @@ import {
 } from "react-router-dom";
 import Inicio from './components/Inicio';
 import Cart from './components/Cart';
+import CustomCartContext from './context/CustomCartContext';
 
 function App() {
   return (
-    <BrowserRouter>
-      <NavBar />
-      <Routes>
-        <Route path='/' element={<Inicio />} />
-        <Route path='/productos' element={<ItemListContainer inicio="Lamp" /> } />
-        <Route path='/Productos/:categoryId' element={<ItemListContainer inicio="Lamp" /> } />
-        <Route path='detalle/:id' element={<ItemDetailContainer/>}/>
-        <Route path='/cart' element={<Cart/>}/>
-      </Routes>
-    </BrowserRouter>
+    <CustomCartContext>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<Inicio />} />
+          <Route path='/productos' element={<ItemListContainer inicio="Lamp" />} />
+          <Route path='/Productos/:categoryId' element={<ItemListContainer inicio="Lamp" />} />
+          <Route path='detalle/:id' element={<ItemDetailContainer />} />
+          <Route path='/cart' element={<Cart />} />
+        </Routes>
+      </BrowserRouter>
+    </CustomCartContext>
   );
 }
 

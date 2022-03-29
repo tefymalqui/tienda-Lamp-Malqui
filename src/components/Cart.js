@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import {CartContext} from '../context/CartContext.js';
 
 const Cart = () => {
+    const carritoContext = useContext(CartContext);
+    console.log('productos carrito', carritoContext.productsCart)
     return (
         <div>
             <h3>Carrito</h3>

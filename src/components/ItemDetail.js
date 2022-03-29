@@ -1,4 +1,4 @@
-import React, { Component, useState} from 'react';
+import React, { Component, useContext, useState} from 'react';
 import Contador from './ItemCount';
 import { Link } from 'react-router-dom';
 //falta agregar descripcion 
@@ -6,12 +6,14 @@ import { Link } from 'react-router-dom';
 const ItemDetail = ({ name,precio, description, stock, img }) => {
 
     const [count, setCount] = useState(1)
+
+
     const onAdd = () => {
         const itemToCart = {
-            name,
-            precio,
-            description,
-            stock,
+           name,
+           precio,
+           description,
+           stock,
         }
         console.log (itemToCart)
     }
