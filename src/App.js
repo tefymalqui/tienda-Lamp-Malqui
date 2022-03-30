@@ -11,11 +11,12 @@ import {
 } from "react-router-dom";
 import Inicio from './components/Inicio';
 import Cart from './components/Cart';
-import CustomCartContext from './context/CustomCartContext';
+import {CustomCart} from "./context/CartContext"
 
 function App() {
+
   return (
-    <CustomCartContext>
+    <CustomCart>
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -26,7 +27,7 @@ function App() {
           <Route path='/cart' element={<Cart />} />
         </Routes>
       </BrowserRouter>
-    </CustomCartContext>
+      </CustomCart>
   );
 }
 

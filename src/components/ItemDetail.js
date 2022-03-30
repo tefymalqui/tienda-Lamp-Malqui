@@ -1,21 +1,27 @@
-import React, { Component, useContext, useState} from 'react';
+import React, { useContext, useState } from 'react';
 import Contador from './ItemCount';
 import { Link } from 'react-router-dom';
+import { CartContext } from "../context/CartContext"
 //falta agregar descripcion 
 
-const ItemDetail = ({ name,precio, description, stock, img }) => {
+const ItemDetail = ({ id, name, precio, description, stock, img }) => {
 
     const [count, setCount] = useState(1)
-
+    const { cart, addToCart, isInCart } = useContext(CartContext)
+    console.log(cart)
 
     const onAdd = () => {
-        const itemToCart = {
-           name,
-           precio,
-           description,
-           stock,
+        if (!isInCart(id)) {
+            const itemToCart = {
+                id,
+                name,
+                precio,
+                description,
+                stock,
+
+            }
+            addToCart(itemToCart)
         }
-        console.log (itemToCart)
     }
     return (
         <div>
@@ -26,15 +32,23 @@ const ItemDetail = ({ name,precio, description, stock, img }) => {
                     <p>{name}</p>
                     <h5>Precio: $<span>{precio}</span></h5>
                     <p>Descripcion: {description}</p>
-                   <Contador 
-                   stock={stock} 
-                   initial={1} 
-                   onAdd={onAdd}
-                   name= {name}
-                   count= {count}
-                   setCount={setCount}
-                   />
-                   <Link to='/cart'>Finalizar Compra</Link>
+                    {
+                        isInCart(id)  ?
+                            <Link to='/cart'>
+                                <button className='btn'>Finalizar Compra</button>
+                            </Link>
+                            :
+                            <>
+                                <Contador
+                                    stock={stock}
+                                    initial={1}
+                                    onAdd={onAdd}
+                                    name={name}
+                                    count={count}
+                                    setCount={setCount}
+                                />
+                            </>
+                    }
                 </div>
             </div>
         </div>
