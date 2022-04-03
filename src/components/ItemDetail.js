@@ -8,7 +8,7 @@ const ItemDetail = ({ id, name, precio, description, stock, img }) => {
 
     const [count, setCount] = useState(1)
     const { cart, addToCart, isInCart } = useContext(CartContext)
-    console.log(cart)
+    //console.log(cart)
 
     const onAdd = () => {
         if (count === 0) return
