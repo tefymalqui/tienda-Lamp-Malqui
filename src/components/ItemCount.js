@@ -25,12 +25,6 @@ const Contador = ({ stock, initial, onAdd, count, setCount}) => {
                 <button onClick={disminuir} className="btn btn-outline-dark">-</button>
                 <span className="m-2">{count}</span>
                 <button onClick={aumentar} className="btn btn-outline-dark">+</button>
-                <Link to='/cart'>
-                <button onClick={() =>{onAdd(count);reset()}} className="btn btn-outline-dark my-2">Agregar al carrito</button>
-                </Link>
-                <Link to='/'>
-                <button className="btn btn-outline-dark my-2">Volver a Inicio</button>
-                </Link>
             </div>
         </div>
     )

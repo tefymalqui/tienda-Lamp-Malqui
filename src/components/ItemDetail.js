@@ -11,6 +11,7 @@ const ItemDetail = ({ id, name, precio, description, stock, img }) => {
     console.log(cart)
 
     const onAdd = () => {
+        if (count === 0) return
         if (!isInCart(id)) {
             const itemToCart = {
                 id,
@@ -18,7 +19,7 @@ const ItemDetail = ({ id, name, precio, description, stock, img }) => {
                 precio,
                 description,
                 stock,
-                count: count
+                count
             }
             addToCart(itemToCart)
         }
@@ -34,11 +35,9 @@ const ItemDetail = ({ id, name, precio, description, stock, img }) => {
                     <p>Descripcion: {description}</p>
                     {
                         isInCart(id) ?
-                            <>
-                                <Link to='/cart'>
-                                    <button className='btn'>Finalizar Compra</button>
-                                </Link>
-                            </>
+                            <Link to="/cart">
+                                <button className="btn btn-outline-dark">Finalizar Compra</button>
+                            </Link>
                             :
                             <>
                                 <Contador
@@ -49,11 +48,12 @@ const ItemDetail = ({ id, name, precio, description, stock, img }) => {
                                     count={count}
                                     setCount={setCount}
                                 />
+                                <button onClick={onAdd} className="btn btn-outline-dark my-2">
+                                    Agregar al Carrito
+                                </button>
 
                             </>
                     }
-
-
                 </div>
             </div>
         </div>

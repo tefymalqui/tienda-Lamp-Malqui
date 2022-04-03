@@ -47,7 +47,8 @@ const ItemList = () => {
             <br></br>
             <Link className=" text-black" to="/Productos/aromatizantes">Aromatizantes</Link>
            <div className='d-flex justify-content-between flex-wrap'>
-                { loading ? <p>Cargando..</p> : listProducts.map((productos) => <Item productos={productos} key={productos.id}/>)}
+                { loading ? <p>Cargando..</p> 
+                : listProducts.map((productos) => <Item productos={productos} key={productos.id}/>)}
            </div>
         </div>
     )
