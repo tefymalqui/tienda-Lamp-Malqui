@@ -39,7 +39,7 @@ const ItemList = () => {
          .catch((error) => console.log(error))
          .finally(() => setLoading(false))
     },[categoryId])
- 
+
     return (
         <div>
             <h3>Productos</h3>

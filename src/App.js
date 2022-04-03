@@ -11,14 +11,16 @@ import {
 } from "react-router-dom";
 import Inicio from './components/Inicio';
 import Cart from './components/Cart';
-import {CustomCart} from "./context/CartContext"
+import { CartProvider } from "./context/CartContext"
 
 function App() {
 
   return (
-    <CustomCart>
+    <CartProvider>
       <BrowserRouter>
+
         <NavBar />
+
         <Routes>
           <Route path='/' element={<Inicio />} />
           <Route path='/productos' element={<ItemListContainer inicio="Lamp" />} />
@@ -27,7 +29,8 @@ function App() {
           <Route path='/cart' element={<Cart />} />
         </Routes>
       </BrowserRouter>
-      </CustomCart>
+
+    </CartProvider>
   );
 }
 

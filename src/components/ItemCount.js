@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
-const Contador = ({ stock, initial, onAdd, count, setCount }) => {
+const Contador = ({ stock, initial, onAdd, count, setCount}) => {
 
     //const [count, setCount] = useState(initial)
     const aumentar = () => {
@@ -14,7 +14,8 @@ const Contador = ({ stock, initial, onAdd, count, setCount }) => {
             setCount(count - 1)
         }
     }
-    const reset = () =>{
+    
+    const reset = () => {
         setCount(initial)
     }
 

@@ -18,7 +18,7 @@ const ItemDetail = ({ id, name, precio, description, stock, img }) => {
                 precio,
                 description,
                 stock,
-
+                count: count
             }
             addToCart(itemToCart)
         }
@@ -33,10 +33,12 @@ const ItemDetail = ({ id, name, precio, description, stock, img }) => {
                     <h5>Precio: $<span>{precio}</span></h5>
                     <p>Descripcion: {description}</p>
                     {
-                        isInCart(id)  ?
-                            <Link to='/cart'>
-                                <button className='btn'>Finalizar Compra</button>
-                            </Link>
+                        isInCart(id) ?
+                            <>
+                                <Link to='/cart'>
+                                    <button className='btn'>Finalizar Compra</button>
+                                </Link>
+                            </>
                             :
                             <>
                                 <Contador
@@ -47,8 +49,11 @@ const ItemDetail = ({ id, name, precio, description, stock, img }) => {
                                     count={count}
                                     setCount={setCount}
                                 />
+
                             </>
                     }
+
+
                 </div>
             </div>
         </div>
