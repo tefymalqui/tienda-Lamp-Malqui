@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from "react";
 import ItemDetail from './ItemDetail.js'
 import { useParams } from "react-router-dom";
+import { doc, getDoc} from "firebase/firestore";
+import { db } from "../firebase/config.js";
 
 const ItemDetailContainer = () => {
+    const [loading, setLoading] = useState(false)
     const [detail, setDetail] = useState([])
     const {id} = useParams();
     
     useEffect(() => {
-        fetch('https://623607d3eb166c26eb2e7041.mockapi.io/productos')
-        .then((response) => response.json())
-        .then((response) =>{
-            // console.log(response) 
-             setDetail( response.find((productos) => productos.id === id))
+        const docRef = doc(db, "items", id)
+        
+        getDoc(docRef)
+        .then((doc)=> {
+            setDetail({id: doc.id, ...doc.data()})
+        })
+        .finally(()=>{
+            setLoading(false)
         })
     }, [])
     
@@ -19,7 +25,11 @@ const ItemDetailContainer = () => {
 
     return (
         <div className='container'>
-             <ItemDetail {...detail}/>
+            {
+                loading
+                ? <h2>Cargando...</h2>
+                :   <ItemDetail {...detail}/>
+            }
         </div>
     )
 }
