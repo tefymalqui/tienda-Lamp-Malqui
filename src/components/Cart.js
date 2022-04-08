@@ -5,7 +5,7 @@ import { BsDashCircleFill } from "react-icons/bs";
 
 const Cart = () => {
     const { cart, totalCart, emptyCart, deleteItem } = useContext(CartContext)
-    
+
     //render para el carrito vacio
     if (cart.length === 0) {
         return (
@@ -57,6 +57,9 @@ const Cart = () => {
                         <button className="btn btn-outline-dark m-2"> Seguir Comprando</button>
                     </Link>
                     <button className="btn btn-outline-dark m-2" onClick={emptyCart}> Vaciar Carrito </button>
+                    <Link to="/checkout">
+                        <button className="btn btn-outline-dark">Finalizar Compra</button>
+                    </Link>
                 </div>
             </div>
         </>
