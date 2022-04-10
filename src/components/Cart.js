@@ -29,11 +29,10 @@ const Cart = () => {
                             <th scope="col"></th>
                         </tr>
                     </thead>
-
+                   <tbody>
                     {
                         cart.map((item) => (
-                            <tbody>
-                                <tr className='table-secondary'>
+                                <tr className='table-secondary' key={item.id}>
                                     <th key={item.id} scope='row'>{item.name} </th>
 
                                     <td> {item.count}</td>
@@ -44,9 +43,9 @@ const Cart = () => {
                                         </button>
                                     </td>
                                 </tr>
-                            </tbody>
                         ))
                     }
+                    </tbody>
                     <tr>
                         <th colSpan='3'></th>
                         <td >Total: ${totalCart()}</td>
