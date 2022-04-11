@@ -46,35 +46,6 @@ import { db } from "../firebase/config"
 
     const { cart, totalCart, emptyCart } = useContext(CartContext) 
 
-    //const sendOrder = async (e) => {
-    //    e.preventDefault();
-    //    const nombre = e.target[0].value;
-    //    const email = e.target[1].value;
-    //    const telefono = e.target[2].value;
-//
-    //    const orderCollection = collection(db, "orders");
-    //    //const productosRef = collection(db, 'items')
-    //    const newOrder = {
-    //        buyer: {
-    //            nombre,
-    //            email,
-    //            telefono
-    //        },
-    //        items: cart,
-    //        total: totalCart,
-    //        date: Timestamp.fromDate(new Date())
-    //    }
-    //    console.log('newOrder', newOrder)
-
-    //    const docReference = await addDoc(orderCollection, newOrder);
-    //    console.log('referencia', docReference)
-    //}
-
-
-    //if (cart.length === 0) {
-    //    return <Navigate to="/productos" />
-    //}
-
     return (
         <div className="container">
             
