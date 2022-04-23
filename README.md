@@ -1,3 +1,13 @@
+# **DECOLAMP**
+Proyecto desarrollado con ReactJs, tienda de decoracion de hogar.
+
+# Funcionalidad 
+Breve [video del proyecto](https://www.loom.com/share/814fa68808014b6b9e675b498e075b4e)
+### Herramientas
+Para este proyecto utilice: 
+. Boostrap 
+. React-icons 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
