@@ -1,0 +1,19 @@
+.contenedor {
+    height: 600px;
+    background-image: url(../img/cont.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.contenedor p {
+    font-size: 4rem;
+    position: absolute;
+    top: 40%;
+    left: 30%;
+}
+
+.estilo img{
+    border-radius: 150px;
+    margin: 2%;
+}

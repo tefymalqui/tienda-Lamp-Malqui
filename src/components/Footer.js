@@ -7,7 +7,7 @@ import {BsInstagram} from "react-icons/bs";
 const Footer = () => {
     return (
         <div>
-            <footer className="text-white py-4 bg-dark">
+            <footer className="text-white py-4 bg-dark mt-2">
                 <div className="container">
                     <nav className="row">
                         <Link to='/' className='col-12 col-md-3 d-flex align-items-center justify-content-center'>

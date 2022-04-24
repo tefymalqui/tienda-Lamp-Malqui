@@ -7,7 +7,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg navbar-light bg-secondary">
       <div className="container-fluid">
-        <a className="navbar-brand mr-3 " href="Logo">
+        <a className="navbar-brand" href="Logo">
           <Link to='/'>
           <img src={logo} width='75' height='75' className="rounded " />
           </Link>
@@ -22,9 +22,6 @@ const Navbar = () => {
             </li>
             <li className="nav-item">
               <Link className="nav-link text-light" to="/Productos">Productos</Link>
-            </li>
-            <li className="nav-item">
-              <Link className="nav-link text-light" to="/Contacto">Contacto</Link>
             </li>
           </ul>
           

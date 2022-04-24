@@ -4,7 +4,7 @@ import { Link, useParams } from 'react-router-dom';
 import { db } from '../firebase/config';
 import ItemList from './ItemList';
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
 
     const [listProducts, setListProducts] = useState([])
     const [loading, setLoading] = useState(false)
@@ -35,11 +35,6 @@ const ItemListContainer = (props) => {
 
    return (
        <div className='container'>
-           <h2>
-              Bienvenidos a {props.inicio}
-           </h2>
-          
-           <h3>Productos</h3>
             <Link className=" text-black" to="/Productos/lampara">Lampara</Link>
             <br></br>
             <Link className=" text-black" to="/Productos/aromatizantes">Aromatizantes</Link>
